@@ -2,9 +2,11 @@ import './App.css'
 import logo from './assets/logo-white.png'
 import Homepage from './pages/Homepage/Homepage.jsx'
 import Newblogpost from './pages/Newblogpost/Newblogpost.jsx'
+import blogpostdetail from './pages/blogpostdetail/blogpostdetail.jsx'
 import Overview from './pages/Overview/Overview.jsx'
 import Error from './pages/Error/Error.jsx'
 import {Routes, Route, NavLink} from 'react-router-dom'
+import Blogpostdetail from "./pages/blogpostdetail/blogpostdetail.jsx";
 
 function App() {
     return (
@@ -26,9 +28,10 @@ function App() {
             <main>
             <Routes>
                 <Route path="/" element={<Homepage/>}/>
-                <Route path="Newblogpost" element={<Newblogpost/>}/>
-                <Route path="Overview" element={<Overview/>}/>
+                <Route path="/Newblogpost" element={<Newblogpost/>}/>
+                <Route path="/Overview" element={<Overview/>}/>
                 <Route path="*" element={<Error/>}/>
+                <Route path="/blogpostdetail/:id" element={<Blogpostdetail/>}/>
             </Routes>
             </main>
         </>
