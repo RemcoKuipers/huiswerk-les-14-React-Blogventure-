@@ -4,11 +4,21 @@ import Homepage from './pages/Homepage/Homepage.jsx'
 import Newblogpost from './pages/Newblogpost/Newblogpost.jsx'
 import Overview from './pages/Overview/Overview.jsx'
 import Error from './pages/Error/Error.jsx'
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, NavLink} from 'react-router-dom'
 
 function App() {
     return (
         <>
+            <nav>
+                <ul className="main-navigation-links">
+                    <li>
+                        <NavLink className={({isActive}) => isActive ? "active-menu-link" : "default-menu-link"} to="/">Home</NavLink>
+                    </li>
+                    <li><NavLink className={({isActive}) => isActive ? "active-menu-link" : "default-menu-link"} to="/overview">Alle posts</NavLink></li>
+                    <li><NavLink className={({isActive}) => isActive ? "active-menu-link" : "default-menu-link"} to="/newblogpost">Nieuwe post maken</NavLink></li>
+                </ul>
+            </nav>
+
             <div className="page-container">
                 <img src={logo} alt="Company logo"/>
 
